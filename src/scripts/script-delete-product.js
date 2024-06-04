@@ -1,10 +1,10 @@
-document.getElementById('atualizarForm').addEventListener('submit', async function (event) {
+document.getElementById('deleteForm').addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const formData = new FormData(this);
 
     const requestOptions = {
-        method: 'PUT',
+        method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -17,12 +17,13 @@ document.getElementById('atualizarForm').addEventListener('submit', async functi
         const data = await response.json();
 
         if (response.ok) {
-            alert('Produto atualizado com sucesso!');
+            alert('Produto apagado com sucesso!');
             document.getElementById('serverMessage').innerText = data.message;
         } else {
-            throw new Error(data.message || 'Erro ao atualizar produto');
+            throw new Error(data.message || 'Erro ao apagar produto');
         }
     } catch (error) {
-        alert('Erro ao atualizar produto: ' + error.message);
+        alert('Erro ao apagar produto: ' + error.message);
     }
 });
+

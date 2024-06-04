@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Produto</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 
 </head>
 
 <body>
     <div class="rectangle">
         <h1>Atualizar Produto</h1>
-        <form id="cadastroForm" action="/atualizar-produto" method="patch">
+        <form id="atualizarForm" action="/atualizar-produto" method="put">
             <label for="id">Código do Produto:</label>
             <input type="text" id="id" name="id">
             <label for="nome">Nome:</label>
@@ -35,7 +35,7 @@
                 <option value="10">Redes e Conectividade</option>
             </select>
             <label for="descricao">Descrição:</label>
-            <input type="text" id="descricao" name="descricao">
+            <input type="id" id="descricao" name="descricao">
             <div class="button-cadastro">
                 <input type="submit" value="Atualizar">
             </div>
