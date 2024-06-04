@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada de Produto</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+</head>
+
+<body>
+    <div class="rectangle">
+        <h1>Entrada de Produto</h1>
+        <form id="deleteForm" action="/delete-produto" method="delete">
+            <label for="id">Código do Produto:</label>
+            <input type="id" id="id" name="id">
+            <div class="button-delete">
+                <input type="submit" value="Apagar">
+            </div>
+        </form>
+        <div id="serverMessage"></div>
+    </div>
+
+    <script src="./scripts/script-delete-product.js"></script>
+
+</body>
+
+</html>
