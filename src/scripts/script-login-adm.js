@@ -12,13 +12,14 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     };
 
     try {
-        document.getElementById('serverMessageLogin').innerText = ''; // Alterado para o ID correto
-        const response = await fetch('http://localhost:3000/login', requestOptions);
+        document.getElementById('serverMessageLogin').innerText = '';
+        const response = await fetch('http://localhost:3000/login/admin', requestOptions);
         const data = await response.json();
 
         if (response.ok) {
             alert('Login efetuado com sucesso!');
             document.getElementById('serverMessageLogin').innerText = data.message;
+            window.location.href = './choose-user.html';
         } else {
             throw new Error(data.message || 'Erro ao fazer login');
         }
