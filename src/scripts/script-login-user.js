@@ -13,7 +13,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
     try {
         document.getElementById('serverMessageLogin').innerText = '';
-        const response = await fetch('http://localhost:3000/login', requestOptions);
+        const response = await fetch('https://sistema-estoque-eztscghqv-devfelipreis-projects.vercel.app/login', requestOptions);
         const data = await response.json();
 
         if (response.ok) {
