@@ -13,7 +13,7 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
 
     try {
         document.getElementById('serverMessage').innerText = '';
-        const response = await fetch('http://localhost:3000/products', requestOptions);
+        const response = await fetch('https://sistema-estoque-eztscghqv-devfelipreis-projects.vercel.app/products', requestOptions);
         const data = await response.json();
 
         if (response.ok) {
