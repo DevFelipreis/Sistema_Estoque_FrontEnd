@@ -13,7 +13,7 @@ document.getElementById('listaForm').addEventListener('submit', async function (
 
     try {
         document.getElementById('serverMessage').innerText = '';
-        const response = await fetch('http://localhost:3000/products', requestOptions);
+        const response = await fetch('https://sistema-estoque-nsv6.onrender.com/products', requestOptions);
         const data = await response.json();
 
         if (response.ok) {
