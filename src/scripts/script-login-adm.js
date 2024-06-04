@@ -13,7 +13,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
     try {
         document.getElementById('serverMessageLogin').innerText = '';
-        const response = await fetch('http://localhost:3000/login/admin', requestOptions);
+        const response = await fetch('https://sistema-estoque-nsv6.onrender.com/login/admin', requestOptions);
         const data = await response.json();
 
         if (response.ok) {
