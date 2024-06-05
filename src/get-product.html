@@ -10,20 +10,21 @@
 </head>
 
 <body>
-    <div class="rectangle">
+    <div class="rectangle-get-product">
         <h1>Lista de Produto(s)</h1>
         <form id="listaForm" action="/listar-produto" method="get">
             <label for="id">Código do Produto:</label>
             <input type="id" id="id" name="id">
-            <div class="button-delete">
+            <div class="button-get">
                 <input type="submit" value="Listar">
             </div>
         </form>
         <div id="serverMessage"></div>
+        <textarea id="serverResponse" rows="35" cols="50" readonly></textarea>
     </div>
 
     <script src="./scripts/script-get-product.js"></script>
-
 </body>
+
 
 </html>
