@@ -19,7 +19,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         if (response.ok) {
             alert('Login efetuado com sucesso!');
             document.getElementById('serverMessageLogin').innerText = data.message;
-            window.location.href = './choose-adm.html';
+            window.location.href = './choose-admin.html';
         } else {
             throw new Error(data.message || 'Erro ao fazer login');
         }
