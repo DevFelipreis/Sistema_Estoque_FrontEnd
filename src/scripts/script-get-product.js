@@ -3,7 +3,7 @@ document.getElementById('listaForm').addEventListener('submit', async function (
 
     try {
         document.getElementById('serverMessage').innerText = '';
-        const response = await fetch('http://localhost:3000/products', {
+        const response = await fetch('https://sistema-estoque-nsv6.onrender.com/products', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
