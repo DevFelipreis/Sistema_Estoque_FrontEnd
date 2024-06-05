@@ -1,29 +1,30 @@
 document.getElementById('listaForm').addEventListener('submit', async function (event) {
     event.preventDefault();
 
-    const formData = new FormData(this);
-
-    const requestOptions = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(Object.fromEntries(formData))
-    };
-
     try {
         document.getElementById('serverMessage').innerText = '';
-        const response = await fetch('https://sistema-estoque-nsv6.onrender.com/products', requestOptions);
+        const response = await fetch('http://localhost:3000/products', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
         const data = await response.json();
 
         if (response.ok) {
-            alert('Sucesso!');
-            document.getElementById('serverMessage').innerText = data.message;
+            if (data.length > 0) {
+                const productsText = data.map(product => {
+                    return `ID: ${product.id},\nNome: ${product.nome},\nPreço: ${product.preco},\nQuantidade: ${product.quantidade},\nCategoria_nome: ${product.categoria_nome},\nDescrição: ${product.descricao}`;
+                });
+                document.getElementById('serverResponse').innerText = productsText;
+            } else {
+                document.getElementById('serverResponse').innerText = 'Nenhum produto encontrado.';
+            }
+
         } else {
-            throw new Error(data.message || 'Erro ao listar o produto');
+            throw new Error(data.message || 'Erro ao listar os produtos');
         }
     } catch (error) {
-        alert('Erro ao listar o produto: ' + error.message);
+        alert('Erro ao listar os produtos: ' + error.message);
     }
 });
-
