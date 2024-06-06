@@ -4,18 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrada de Produto</title>
+    <title>Lista de Produtos</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-
 </head>
 
 <body>
     <div class="rectangle-get-product">
         <h1>Lista de Produto(s)</h1>
         <h3>Deixe em branco para mostrar todos os produtos</h3>
-        <form id="listaForm" action="/listar-produto" method="get">
-            <label for="id">Código do Produto:</label>
-            <input type="id" id="id" name="id">
+        <form id="listaForm">
+            <label for="id">Código:</label>
+            <input type="text" id="id" name="id">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <label for="categoria_id">Categoria:</label>
+            <select id="categoria_id" name="categoria_id">
+                <option value=""></option>
+                <option value="1">Computadores</option>
+                <option value="2">Laptops</option>
+                <option value="3">Monitores</option>
+                <option value="4">Teclados</option>
+                <option value="5">Mouses</option>
+                <option value="6">Impressoras</option>
+                <option value="7">Componentes de Hardware</option>
+                <option value="8">Acessórios</option>
+                <option value="9">Armazenamento</option>
+                <option value="10">Redes e Conectividade</option>
+            </select>
             <div class="button-get">
                 <input type="submit" value="Listar">
             </div>
@@ -26,6 +41,5 @@
 
     <script src="./scripts/script-get-product.js"></script>
 </body>
-
 
 </html>
