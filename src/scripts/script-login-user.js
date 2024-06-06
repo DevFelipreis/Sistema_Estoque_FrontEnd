@@ -17,7 +17,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         const data = await response.json();
 
         if (response.ok) {
-            alert(`Login efetuado com sucesso! ${urlBase}`);
+            alert(`Login efetuado com sucesso!`);
             document.getElementById('serverMessageLogin').innerText = data.message;
             window.location.href = './choose-user.html';
         } else {
