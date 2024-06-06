@@ -13,38 +13,31 @@ document.getElementById('listaForm').addEventListener('submit', async function (
 
     try {
         document.getElementById('serverMessage').innerText = '';
-        const response = await fetch(`https://sistema-estoque-nsv6.onrender.com/?${queryParams.toString()}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-
-        const contentType = response.headers.get('content-type');
-        if (contentType && contentType.indexOf('application/json') !== -1) {
-            const data = await response.json();
-
-            if (response.ok) {
-                if (Array.isArray(data) && data.length > 0) {
-                    const productsText = data.map(product => {
-                        return `ID: ${product.id},\nNome: ${product.nome},\nPreço: ${product.preco},\nQuantidade: ${product.quantidade},
-                        \nCategoria: ${product.categoria_nome},\nDescrição: ${product.descricao}`;
-                    }).join('\n\n');
-                    document.getElementById('serverResponse').value = productsText;
-                } else if (data.id) {
-                    const productText = `ID: ${data.id},\nNome: ${data.nome},\nPreço: ${data.preco},\nQuantidade: ${data.quantidade},
-                    \nCategoria: ${data.categoria_nome},\nDescrição: ${data.descricao}`;
-                    document.getElementById('serverResponse').value = productText;
-                } else {
-                    document.getElementById('serverResponse').value = 'Nenhum produto encontrado.';
+        const response = await fetch(`https://sistema-estoque-nsv6.onrender.com/products${queryParams.toString()}`,
+            {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
                 }
+            });
+        const data = await response.json();
+
+        if (response.ok) {
+            if (Array.isArray(data) && data.length > 0) {
+                const productsText = data.map(product => {
+                    return `ID: ${product.id},\nNome: ${product.nome},\nPreço: ${product.preco},\nQuantidade: ${product.quantidade},
+                    \nCategoria: ${product.categoria_nome},\nDescrição: ${product.descricao}`;
+                }).join('\n\n');
+                document.getElementById('serverResponse').value = productsText;
+            } else if (data.id) {
+                const productText = `ID: ${data.id},\nNome: ${data.nome},\nPreço: ${data.preco},\nQuantidade: ${data.quantidade},
+                \nCategoria: ${data.categoria_nome},\nDescrição: ${data.descricao}`;
+                document.getElementById('serverResponse').value = productText;
             } else {
-                throw new Error(data.message || 'Erro ao listar os produtos');
+                document.getElementById('serverResponse').value = 'Nenhum produto encontrado.';
             }
         } else {
-            const errorText = await response.text();  // Capture o texto da resposta
-            console.error('Resposta do servidor não é JSON:', errorText);  // Log do conteúdo
-            throw new Error('Resposta do servidor não é JSON');
+            throw new Error(data.message || 'Erro ao listar os produtos');
         }
     } catch (error) {
         alert('Erro ao listar os produtos: ' + error.message);
