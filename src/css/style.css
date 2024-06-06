@@ -132,7 +132,7 @@ body {
 
 .rectangle-delete-product {
     width: 200px;
-    height: 200px;
+    height: 300px;
     background-color: var(--rectangle-color);
     font-family: var(--main-font-family);
     border-radius: 10px;

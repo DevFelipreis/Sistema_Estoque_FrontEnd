@@ -10,20 +10,21 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
         },
         body: JSON.stringify(Object.fromEntries(formData))
     };
-
     try {
-        document.getElementById('serverMessage').innerText = '';
         const response = await fetch('https://sistema-estoque-nsv6.onrender.com/products', requestOptions);
         const data = await response.json();
 
         if (response.ok) {
             alert('Produto cadastrado com sucesso!');
-            document.getElementById('serverMessage').innerText = data.message;
+            document.getElementById('serverResponse').value = data.message;
         } else {
-            throw new Error(data.message || 'Erro ao cadastrar produto');
+            throw new Error(data.message || 'Erro ao adicionar o produto');
         }
     } catch (error) {
-        alert('Erro ao cadastrar produto: ' + error.message);
+        alert('Erro ao adicionar o produto: ' + error.message);
+        document.getElementById('serverResponse').value = error.message;
     }
+
 });
+
 
