@@ -42,6 +42,8 @@ document.getElementById('listaForm').addEventListener('submit', async function (
                 throw new Error(data.message || 'Erro ao listar os produtos');
             }
         } else {
+            const errorText = await response.text();  // Capture o texto da resposta
+            console.error('Resposta do servidor não é JSON:', errorText);  // Log do conteúdo
             throw new Error('Resposta do servidor não é JSON');
         }
     } catch (error) {
