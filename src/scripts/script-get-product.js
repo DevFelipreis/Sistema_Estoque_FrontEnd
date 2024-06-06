@@ -19,24 +19,30 @@ document.getElementById('listaForm').addEventListener('submit', async function (
                 'Content-Type': 'application/json'
             }
         });
-        const data = await response.json();
 
-        if (response.ok) {
-            if (Array.isArray(data) && data.length > 0) {
-                const productsText = data.map(product => {
-                    return `ID: ${product.id},\nNome: ${product.nome},\nPreço: ${product.preco},\nQuantidade: ${product.quantidade},
-                    \nCategoria: ${product.categoria_nome},\nDescrição: ${product.descricao}`;
-                }).join('\n\n');
-                document.getElementById('serverResponse').value = productsText;
-            } else if (data.id) {
-                const productText = `ID: ${data.id},\nNome: ${data.nome},\nPreço: ${data.preco},\nQuantidade: ${data.quantidade},
-                \nCategoria: ${data.categoria_nome},\nDescrição: ${data.descricao}`;
-                document.getElementById('serverResponse').value = productText;
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.indexOf('application/json') !== -1) {
+            const data = await response.json();
+
+            if (response.ok) {
+                if (Array.isArray(data) && data.length > 0) {
+                    const productsText = data.map(product => {
+                        return `ID: ${product.id},\nNome: ${product.nome},\nPreço: ${product.preco},\nQuantidade: ${product.quantidade},
+                        \nCategoria: ${product.categoria_nome},\nDescrição: ${product.descricao}`;
+                    }).join('\n\n');
+                    document.getElementById('serverResponse').value = productsText;
+                } else if (data.id) {
+                    const productText = `ID: ${data.id},\nNome: ${data.nome},\nPreço: ${data.preco},\nQuantidade: ${data.quantidade},
+                    \nCategoria: ${data.categoria_nome},\nDescrição: ${data.descricao}`;
+                    document.getElementById('serverResponse').value = productText;
+                } else {
+                    document.getElementById('serverResponse').value = 'Nenhum produto encontrado.';
+                }
             } else {
-                document.getElementById('serverResponse').value = 'Nenhum produto encontrado.';
+                throw new Error(data.message || 'Erro ao listar os produtos');
             }
         } else {
-            throw new Error(data.message || 'Erro ao listar os produtos');
+            throw new Error('Resposta do servidor não é JSON');
         }
     } catch (error) {
         alert('Erro ao listar os produtos: ' + error.message);
