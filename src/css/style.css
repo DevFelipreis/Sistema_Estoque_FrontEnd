@@ -87,7 +87,7 @@ body {
 
 .rectangle-entry-product {
     width: 200px;
-    height: 300px;
+    height: 400px;
     background-color: var(--rectangle-color);
     font-family: var(--main-font-family);
     border-radius: 10px;
@@ -117,7 +117,7 @@ body {
 
 .rectangle-update-product {
     width: 200px;
-    height: 500px;
+    height: 700px;
     background-color: var(--rectangle-color);
     font-family: var(--main-font-family);
     border-radius: 10px;

@@ -12,19 +12,17 @@ document.getElementById('entradaForm').addEventListener('submit', async function
     };
 
     try {
-        document.getElementById('serverMessage').innerText = '';
         const response = await fetch('https://sistema-estoque-nsv6.onrender.com/products', requestOptions);
         const data = await response.json();
 
         if (response.ok) {
             alert('Produto adicionado com sucesso!');
-            document.getElementById('serverMessage').innerText = data.message;
+            document.getElementById('serverResponse').value = data.message;
         } else {
             throw new Error(data.message || 'Erro ao adicionar o produto');
         }
     } catch (error) {
         alert('Erro ao adicionar o produto: ' + error.message);
+        document.getElementById('serverResponse').value = error.message;
     }
 });
-
-
