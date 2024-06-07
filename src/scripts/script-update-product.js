@@ -16,6 +16,7 @@ document.getElementById('atualizarForm').addEventListener('submit', async functi
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
+
     };
 
     try {
@@ -24,8 +25,9 @@ document.getElementById('atualizarForm').addEventListener('submit', async functi
         const responseData = await response.json();
 
         if (response.ok) {
-            alert('Produto atualizado com sucesso!');
+            alert('Produto criado com sucesso!');
             document.getElementById('serverResponse').value = responseData.message;
+
         } else {
             throw new Error(responseData.message || 'Erro ao atualizar produto');
         }

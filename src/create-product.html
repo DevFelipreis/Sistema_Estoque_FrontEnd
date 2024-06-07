@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Produto</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-
 </head>
 
 <body>
     <div class="rectangle-create-product">
-        <h1>Cadastrar Produto</h1>
-        <form id="cadastroForm" action="/cadastrar-produto" method="post">
+        <div class="title">
+            <h1>Cadastrar Produto</h1>
+        </div>
+        <form class="align-form" id="cadastroForm" action="/cadastrar-produto" method="post">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome">
             <label for="preco">Preço:</label>
@@ -34,16 +35,16 @@
             </select>
             <label for="descricao">Descrição:</label>
             <input type="text" id="descricao" name="descricao">
-            <div class="button-cadastro">
+            <div class="button">
                 <input type="submit" value="Cadastrar">
             </div>
-            <textarea id="serverResponse" rows="7" cols="23" readonly></textarea>
         </form>
-        <div id="serverMessage"></div>
+        <textarea id="serverResponse" rows="25" cols="23" readonly></textarea>
     </div>
 
-    <script src="./scripts/script-create-product.js"></script>
+    <div id="serverMessage"></div>
 
+    <script src="./scripts/script-create-product.js"></script>
 </body>
 
 </html>

@@ -4,26 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrada de Produto</title>
+    <title>Apagar Produto</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-
 </head>
 
 <body>
-    <div class="rectangle-delete-product ">
-        <h1>Apagar Produto</h1>
-        <form id="deleteForm" action="/delete-produto" method="delete">
-            <label for="id">Código do Produto:</label>
-            <input type="id" id="id" name="id">
-            <div class="button-delete">
-                <input type="submit" value="Apagar">
-            </div>
-        </form>
+    <div class="rectangle-delete-product">
+        <div class="title">
+            <h1>Apagar Produto</h1>
+        </div>
+        <div class="align-form">
+            <form id="deleteForm" action="/delete-produto" method="delete">
+                <label for="id">Código do Produto:</label>
+                <input type="text" id="id" name="id">
+                <div class="button">
+                    <input type="submit" value="Apagar">
+                </div>
+            </form>
+        </div>
         <textarea id="serverResponse" rows="5" cols="23" readonly></textarea>
     </div>
 
     <script src="./scripts/script-delete-product.js"></script>
-
 </body>
 
 </html>

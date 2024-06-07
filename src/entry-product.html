@@ -6,22 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrada de Produto</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-
 </head>
 
 <body>
     <div class="rectangle-entry-product">
-        <h1>Entrada de Produto</h1>
-        <form id="entradaForm" action="/entrada-produto" method="patch">
-            <label for="id">Código do Produto:</label>
-            <input type="number" id="id" name="id">
-            <label for="quantidade">Quantidade:</label>
-            <input type="number" id="quantidade" name="quantidade">
-            <div class="button-entrada">
-                <input type="submit" value="Dar Entrada">
-            </div>
-            <textarea id="serverResponse" rows="5" cols="23" readonly></textarea>
-        </form>
+        <div class="title">
+            <h1>Entrada de Produto</h1>
+        </div>
+        <div class="align-form">
+            <form id="entradaForm" action="/entrada-produto" method="patch">
+                <label for="id">Código do Produto:</label>
+                <input type="number" id="id" name="id">
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" name="quantidade">
+                <div class="button">
+                    <input type="submit" value="Dar Entrada">
+                </div>
+            </form>
+        </div>
+        <textarea id="serverResponse" rows="35" cols="23" readonly></textarea>
     </div>
 
     <script src="./scripts/script-entry-product.js"></script>

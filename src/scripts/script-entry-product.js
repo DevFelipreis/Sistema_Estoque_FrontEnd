@@ -2,13 +2,18 @@ document.getElementById('entradaForm').addEventListener('submit', async function
     event.preventDefault();
 
     const formData = new FormData(this);
+    const formObject = {};
+
+    formData.forEach((value, key) => {
+        formObject[key] = value;
+    });
 
     const requestOptions = {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(Object.fromEntries(formData))
+        body: JSON.stringify(formObject)
     };
 
     try {
@@ -16,13 +21,20 @@ document.getElementById('entradaForm').addEventListener('submit', async function
         const data = await response.json();
 
         if (response.ok) {
-            alert('Produto adicionado com sucesso!');
-            document.getElementById('serverResponse').value = data.message;
+            if (data.productEntry) {
+                const product = JSON.parse(data.productEntry);
+                const productText = `ID: ${product.id},\nNome: ${product.nome},\nPreço: ${product.preco},\nQuantidade: ${product.quantidade},
+                \nCategoria: ${product.categoria_id},\nDescrição: ${product.descricao}`;
+                alert('Entrada de produto realizada com sucesso!');
+                document.getElementById('serverResponse').value = productText;
+            } else {
+                document.getElementById('serverResponse').value = 'Nenhum produto encontrado.';
+            }
         } else {
-            throw new Error(data.message || 'Erro ao adicionar o produto');
+            throw new Error(data.message || 'Erro ao listar os produtos');
         }
     } catch (error) {
-        alert('Erro ao adicionar o produto: ' + error.message);
-        document.getElementById('serverResponse').value = error.message;
+        alert('Erro ao listar os produtos: ' + error.message);
+        document.getElementById('serverResponse').value = 'Erro: ' + error.message;
     }
 });

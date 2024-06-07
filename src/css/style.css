@@ -19,10 +19,10 @@ body {
 .title {
     font-weight: bold;
     font-family: var(--main-font-family);
-    margin-top: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     color: var(--letter-color);
-    font-size: 18px;
-    line-height: 1.5;
+    font-size: 12px;
     text-align: center;
 }
 
@@ -56,37 +56,98 @@ body {
 
 .rectangle-login-user {
     width: 300px;
-    height: 300px;
+    height: 350px;
     background-color: var(--rectangle-color);
     font-family: var(--main-font-family);
-    border-radius: 10px;
+    border-radius: 20px;
     color: var(--letter-color);
     text-align: center;
     font-size: 18px;
-    line-height: 1.5;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 2px;
 }
 
-
 .rectangle-choose-user {
-    width: 400px;
-    height: 300px;
+    width: 600px;
+    height: auto;
     background-color: var(--rectangle-color);
     font-family: var(--main-font-family);
-    border-radius: 10px;
+    border-radius: 20px;
     color: var(--letter-color);
     text-align: center;
     font-size: 18px;
     line-height: 1.5;
+    padding: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.rectangle-choose-user img {
+    max-width: 48%;
+    margin-bottom: 10px;
+    margin-top: 30px;
 }
 
 .rectangle-entry-product {
-    width: 200px;
+    width: 250px;
+    height: 500px;
+    background-color: var(--rectangle-color);
+    font-family: var(--main-font-family);
+    border-radius: 20px;
+    color: var(--letter-color);
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.rectangle-create-product {
+    width: 250px;
+    height: 600px;
+    background-color: var(--rectangle-color);
+    font-family: var(--main-font-family);
+    border-radius: 20px;
+    color: var(--letter-color);
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.align-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rectangle-update-product {
+    width: 250px;
+    height: 700px;
+    background-color: var(--rectangle-color);
+    font-family: var(--main-font-family);
+    border-radius: 20px;
+    color: var(--letter-color);
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.rectangle-delete-product {
+    width: 250px;
     height: 400px;
     background-color: var(--rectangle-color);
     font-family: var(--main-font-family);
@@ -100,57 +161,12 @@ body {
     padding: 20px;
 }
 
-.rectangle-create-product {
-    width: 200px;
-    height: 500px;
-    background-color: var(--rectangle-color);
-    font-family: var(--main-font-family);
-    border-radius: 10px;
-    color: var(--letter-color);
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.rectangle-update-product {
-    width: 200px;
+.rectangle-get-product {
+    width: 250px;
     height: 700px;
     background-color: var(--rectangle-color);
     font-family: var(--main-font-family);
-    border-radius: 10px;
-    color: var(--letter-color);
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.rectangle-delete-product {
-    width: 200px;
-    height: 300px;
-    background-color: var(--rectangle-color);
-    font-family: var(--main-font-family);
-    border-radius: 10px;
-    color: var(--letter-color);
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.rectangle-get-product {
-    width: 300px;
-    height: 800px;
-    background-color: var(--rectangle-color);
-    font-family: var(--main-font-family);
-    border-radius: 10px;
+    border-radius: 20px;
     color: var(--letter-color);
     text-align: center;
     font-size: 18px;
@@ -169,9 +185,23 @@ body {
     font-weight: bold;
 }
 
-.button-cadastro {
+.button {
     margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.button input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button input[type="submit"]:hover {
+    background-color: #2980b9;
 }

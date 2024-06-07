@@ -27,7 +27,7 @@ document.getElementById('listaForm').addEventListener('submit', async function (
                 const productsText = data.map(product => {
                     return `ID: ${product.id},\nNome: ${product.nome},\nPreço: ${product.preco},\nQuantidade: ${product.quantidade},
                     \nCategoria: ${product.categoria_nome},\nDescrição: ${product.descricao}`;
-                }).join('\n\n');
+                }).join('\n______________________________\n');;
                 document.getElementById('serverResponse').value = productsText;
             } else if (data.id) {
                 const productText = `ID: ${data.id},\nNome: ${data.nome},\nPreço: ${data.preco},\nQuantidade: ${data.quantidade},
