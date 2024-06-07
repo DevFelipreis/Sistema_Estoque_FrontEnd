@@ -11,15 +11,18 @@
 <body>
     <div class="rectangle-login-user">
         <h1>Login</h1>
-        <form id="loginForm" action="/login-user" method="post">
-            <label for="username">Apelido:</label>
-            <input type="text" id="username" name="username">
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha">
-            <div class="button-login">
-                <input type="submit" value="Login">
-            </div>
+        <div>
+            <form class="align-form" id="loginForm" action="/login-user" method="post">
+                <label for="username">Apelido:</label>
+                <input type="text" id="username" name="username">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha">
+        </div>
+        <div class="button">
+            <input type="submit" value="Login">
+        </div>
         </form>
+
         <div id="serverMessageLogin"></div>
     </div>
 

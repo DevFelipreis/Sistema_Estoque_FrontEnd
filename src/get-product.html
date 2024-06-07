@@ -10,33 +10,39 @@
 
 <body>
     <div class="rectangle-get-product">
-        <h1>Lista de Produto(s)</h1>
-        <h3>Deixe em branco para mostrar todos os produtos</h3>
-        <form id="listaForm">
-            <label for="id">Código:</label>
-            <input type="text" id="id" name="id">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome">
-            <label for="categoria_id">Categoria:</label>
-            <select id="categoria_id" name="categoria_id">
-                <option value=""></option>
-                <option value="1">Computadores</option>
-                <option value="2">Laptops</option>
-                <option value="3">Monitores</option>
-                <option value="4">Teclados</option>
-                <option value="5">Mouses</option>
-                <option value="6">Impressoras</option>
-                <option value="7">Componentes de Hardware</option>
-                <option value="8">Acessórios</option>
-                <option value="9">Armazenamento</option>
-                <option value="10">Redes e Conectividade</option>
-            </select>
-            <div class="button-get">
-                <input type="submit" value="Listar">
-            </div>
-        </form>
+        <div class="title">
+            <h1>Lista de Produto(s)</h1>
+        </div>
+        <div>
+            <h3>Deixe em branco para listar todos os produtos</h3>
+        </div>
+        <div class="align-form">
+            <form id="listaForm">
+                <label for="id">Código:</label>
+                <input type="text" id="id" name="id">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+                <label for="categoria_id">Categoria:</label>
+                <select id="categoria_id" name="categoria_id">
+                    <option value=""></option>
+                    <option value="1">Computadores</option>
+                    <option value="2">Laptops</option>
+                    <option value="3">Monitores</option>
+                    <option value="4">Teclados</option>
+                    <option value="5">Mouses</option>
+                    <option value="6">Impressoras</option>
+                    <option value="7">Componentes de Hardware</option>
+                    <option value="8">Acessórios</option>
+                    <option value="9">Armazenamento</option>
+                    <option value="10">Redes e Conectividade</option>
+                </select>
+                <div class="button">
+                    <input type="submit" value="Listar">
+                </div>
+            </form>
+        </div>
         <div id="serverMessage"></div>
-        <textarea id="serverResponse" rows="35" cols="50" readonly></textarea>
+        <textarea id="serverResponse" rows="25" cols="50" readonly></textarea>
     </div>
 
     <script src="./scripts/script-get-product.js"></script>
