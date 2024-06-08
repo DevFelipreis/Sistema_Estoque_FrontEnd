@@ -12,7 +12,7 @@
     <div class="rectangle-login-user">
         <h1>Login</h1>
         <div>
-            <form class="align-form" id="loginForm" action="/login-user" method="post">
+            <form class="align-form-user-login" id="loginForm" action="/login-user" method="post">
                 <label for="username">Apelido:</label>
                 <input type="text" id="username" name="username">
                 <label for="senha">Senha:</label>
@@ -24,6 +24,15 @@
         </form>
 
         <div id="serverMessageLogin"></div>
+
+        <div class="button-container">
+            <div class="back-button">
+                <a href="./choose-user.html">Esqueci a senha</a>
+            </div>
+            <div class="talk-adm-button">
+                <a href="./choose-user.html">Solicitar Cadastro</a>
+            </div>
+        </div>
     </div>
 
     <script src="./scripts/script-login-user.js"></script>
