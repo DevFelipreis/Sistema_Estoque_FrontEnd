@@ -16,7 +16,7 @@
         <div>
             <h3>Deixe em branco para listar todos os produtos</h3>
         </div>
-        <div class="align-form">
+        <div class="align-form-get-product">
             <form id="listaForm">
                 <label for="id">Código:</label>
                 <input type="text" id="id" name="id">
@@ -42,10 +42,15 @@
             </form>
         </div>
         <div id="serverMessage"></div>
-        <textarea id="serverResponse" rows="25" cols="50" readonly></textarea>
-    </div>
+        <textarea id="serverResponse" rows="25" cols="80" readonly></textarea>
+        <div class="back-button">
+            <a href="./choose-user.html">Voltar</a>
+        </div>
+        <div class="talk-adm-button">
+            <a href="./choose-user.html">Entre em contato com o administrador</a>
+        </div>
 
-    <script src="./scripts/script-get-product.js"></script>
+        <script src="./scripts/script-get-product.js"></script>
 </body>
 
 </html>
