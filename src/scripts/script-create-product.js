@@ -9,12 +9,20 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
         formObject[key] = value;
     });
 
+    const token = localStorage.getItem('token');
+
     const requestOptions = {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(formObject)
+    };
+
+    if (!token) {
+        alert('Necessário realizar o login para entrar no sistema.');
+        window.location.href = './login-user.html';
     };
 
     try {
@@ -29,13 +37,13 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
                 \nCategoria: ${product.categoria_id},\nDescrição: ${product.descricao}`;
                 alert('Produto criado com sucesso!');
                 document.getElementById('serverResponse').value = productText;
-            }
+            };
         } else {
             throw new Error(data.message || 'Erro ao cadastrar o produto');
-        }
+        };
     } catch (error) {
         console.error('Erro ao cadastrar o produto:', error);
         alert('Erro ao cadastrar o produto: ' + error.message);
         document.getElementById('serverResponse').value = 'Erro: ' + error.message;
-    }
+    };
 });

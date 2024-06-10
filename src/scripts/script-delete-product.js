@@ -3,12 +3,20 @@ document.getElementById('deleteForm').addEventListener('submit', async function 
 
     const formData = new FormData(this);
 
+    const token = localStorage.getItem('token');
+
     const requestOptions = {
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(Object.fromEntries(formData))
+    };
+
+    if (!token) {
+        alert('Necessário realizar o login para entrar no sistema.');
+        window.location.href = './login-user.html';
     };
 
     try {
@@ -20,10 +28,10 @@ document.getElementById('deleteForm').addEventListener('submit', async function 
             document.getElementById('serverResponse').value = data.message;
         } else {
             throw new Error(data.message || 'Erro ao adicionar o produto');
-        }
+        };
     } catch (error) {
         alert('Erro ao adicionar o produto: ' + error.message);
         document.getElementById('serverResponse').value = error.message;
-    }
+    };
 });
 
