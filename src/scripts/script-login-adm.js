@@ -3,11 +3,15 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
     const formData = new FormData(this);
 
+    const token = localStorage.getItem('token');
+
     const requestOptions = {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
+
         body: JSON.stringify(Object.fromEntries(formData))
     };
 
@@ -22,8 +26,8 @@ document.getElementById('loginForm').addEventListener('submit', async function (
             window.location.href = './choose-admin.html';
         } else {
             throw new Error(data.message || 'Erro ao fazer login');
-        }
+        };
     } catch (error) {
         alert('Erro fazer login: ' + error.message);
-    }
+    };
 });

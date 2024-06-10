@@ -20,49 +20,6 @@ body {
     background-position: center;
 }
 
-.back-button {
-    font-family: var(--main-font-family);
-    font-size: 18px;
-    color: var(--letter-color);
-    cursor: pointer;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-}
-
-.back-button a {
-    text-decoration: none;
-    color: var(--letter-color);
-}
-
-.back-button a:hover {
-    color: var(--letter-color-button);
-}
-
-
-.talk-adm-button {
-    font-family: var(--main-font-family);
-    font-size: 18px;
-    color: var(--letter-color);
-    cursor: pointer;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-}
-
-.talk-adm-button a {
-    text-decoration: none;
-    color: var(--letter-color);
-}
-
-.talk-adm-button a:hover {
-    color: var(--letter-color-button);
-}
-
 .title {
     font-weight: bold;
     font-family: var(--main-font-family);
@@ -91,22 +48,6 @@ body {
 .admin-icon {
     width: 150px;
     height: 150px;
-}
-
-.align-textarea {
-    color: #38cee2;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    font-family: var(--main-font-family);
-    font-size: 18px;
-    color: var(--letter-color);
-    margin: 0;
-    padding: 0;
-    text-align: center;
 }
 
 .rectangle-index {
@@ -254,6 +195,22 @@ body {
     align-items: center;
 }
 
+.align-textarea {
+    color: #38cee2;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    font-family: var(--main-font-family);
+    font-size: 18px;
+    color: var(--letter-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
 .align-form-create-product {
     font-family: var(--main-font-family);
     font-size: 18px;
@@ -340,14 +297,6 @@ body {
     margin-left: 50px;
 }
 
-#serverMessage {
-    margin-top: 0px;
-    padding: 0;
-    font-size: 18px;
-    color: #3498db;
-    font-weight: bold;
-}
-
 .button {
     margin-top: 30px;
     margin-bottom: 10px;
@@ -355,6 +304,48 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.back-button {
+    font-family: var(--main-font-family);
+    font-size: 18px;
+    color: var(--letter-color);
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.back-button a {
+    text-decoration: none;
+    color: var(--letter-color);
+}
+
+.back-button a:hover {
+    color: var(--letter-color-button);
+}
+
+.talk-adm-button {
+    font-family: var(--main-font-family);
+    font-size: 18px;
+    color: var(--letter-color);
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.talk-adm-button a {
+    text-decoration: none;
+    color: var(--letter-color);
+}
+
+.talk-adm-button a:hover {
+    color: var(--letter-color-button);
 }
 
 .button input[type="submit"] {
@@ -378,4 +369,12 @@ body {
 
 .talk-adm-button {
     margin-top: 10px;
+}
+
+#serverMessage {
+    margin-top: 0px;
+    padding: 0;
+    font-size: 18px;
+    color: #3498db;
+    font-weight: bold;
 }

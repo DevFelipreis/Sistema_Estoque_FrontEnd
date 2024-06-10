@@ -11,14 +11,23 @@ document.getElementById('listaForm').addEventListener('submit', async function (
     if (categoria_id) queryParams.append('categoria_id', categoria_id);
     console.log(queryParams.toString());
 
+    const token = localStorage.getItem('token');
+
     try {
         document.getElementById('serverMessage').innerText = '';
         const response = await fetch(`https://sistema-estoque-nsv6.onrender.com/products?${queryParams.toString()}`, {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             }
         });
+
+        if (!token) {
+            alert('Necessário realizar o login para entrar no sistema.');
+            window.location.href = './login-user.html';
+        };
+
         const data = await response.json();
 
         if (response.ok) {
@@ -32,12 +41,12 @@ document.getElementById('listaForm').addEventListener('submit', async function (
                 document.getElementById('serverResponse').value = productText;
             } else {
                 document.getElementById('serverResponse').value = 'Nenhum produto encontrado.';
-            }
+            };
         } else {
             throw new Error(data.message || 'Erro ao listar os produtos');
-        }
+        };
     } catch (error) {
         alert('Erro ao listar os produtos: ' + error.message);
         document.getElementById('serverResponse').value = 'Erro: ' + error.message;
-    }
+    };
 });

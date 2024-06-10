@@ -8,12 +8,21 @@ document.getElementById('entradaForm').addEventListener('submit', async function
         formObject[key] = value;
     });
 
+    const token = localStorage.getItem('token');
+
     const requestOptions = {
         method: 'PATCH',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
         },
+
         body: JSON.stringify(formObject)
+    };
+
+    if (!token) {
+        alert('Necessário realizar o login para entrar no sistema.');
+        window.location.href = './login-user.html';
     };
 
     try {
@@ -29,12 +38,12 @@ document.getElementById('entradaForm').addEventListener('submit', async function
                 document.getElementById('serverResponse').value = productText;
             } else {
                 document.getElementById('serverResponse').value = 'Nenhum produto encontrado.';
-            }
+            };
         } else {
             throw new Error(data.message || 'Erro ao listar os produtos');
-        }
+        };
     } catch (error) {
         alert('Erro ao listar os produtos: ' + error.message);
         document.getElementById('serverResponse').value = 'Erro: ' + error.message;
-    }
+    };
 });
