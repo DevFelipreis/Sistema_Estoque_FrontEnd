@@ -28,7 +28,7 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
     };
 
     try {
-        const response = await fetch('http://localhost:3000/users', requestOptions);
+        const response = await fetch('https://sistema-estoque-nsv6.onrender.com/users', requestOptions);
 
         if (!response.ok) {
             const contentType = response.headers.get('Content-Type');
