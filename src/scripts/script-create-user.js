@@ -1,6 +1,5 @@
 document.getElementById('cadastroForm').addEventListener('submit', async function (event) {
     event.preventDefault();
-    console.log('Formulário enviado');
 
     const formData = new FormData(this);
     const formObject = {};
@@ -9,7 +8,15 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
         formObject[key] = value;
     });
 
+    console.log("Form Data:", formObject); // Debugging statement
+
     const token = localStorage.getItem('token');
+
+    if (!token) {
+        alert('Necessário realizar o login para entrar no sistema.');
+        window.location.href = './index.html';
+        return;
+    }
 
     const requestOptions = {
         method: 'POST',
@@ -20,29 +27,34 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
         body: JSON.stringify(formObject)
     };
 
-    if (!token) {
-        alert('Necessário realizar o login para entrar no sistema.');
-        window.location.href = './index.html';
-        return;
-    }
-
     try {
-        const response = await fetch('https://sistema-estoque-nsv6.onrender.com/user', requestOptions);
+        const response = await fetch('http://localhost:3000/users', requestOptions);
+
+        if (!response.ok) {
+            const contentType = response.headers.get('Content-Type');
+            let errorMessage = 'Erro ao cadastrar o usuário';
+
+            if (contentType && contentType.indexOf('application/json') !== -1) {
+                const data = await response.json();
+                errorMessage = data.message || errorMessage;
+            } else {
+                const text = await response.text();
+                errorMessage = `Unexpected response: ${text}`;
+            }
+
+            throw new Error(errorMessage);
+        }
+
         const data = await response.json();
 
-        if (response.ok) {
-            if (data) {
-                const userText = `ID: ${data.id},\nNome: ${data.nome},\nUsername: ${data.username},\nEmail: ${data.email},\nProfissao: ${data.profissao_id},\nAtivo: ${data.status_conta}`;
-                alert('Usuário criado com sucesso!');
-                document.getElementById('serverResponse').value = userText;
-            }
-        } else {
-            throw new Error(data.message || 'Erro ao cadastrar o usuário');
+        if (data) {
+            const userText = `ID: ${data.id},\nNome: ${data.nome},\nUsername: ${data.username},\nEmail: ${data.email},\nProfissao: ${data.profissao_id},\nAtivo: ${data.status_conta}`;
+            alert('Usuário criado com sucesso!');
+            document.getElementById('serverResponse').value = userText;
         }
     } catch (error) {
+        console.error('Erro ao cadastrar o usuário:', error);
         alert('Erro ao cadastrar o usuário: ' + error.message);
         document.getElementById('serverResponse').value = 'Erro: ' + error.message;
-        window.location.href = './index.html';
-        return;
     }
 });

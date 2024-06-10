@@ -14,12 +14,12 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     };
 
     try {
-        const response = await fetch('https://sistema-estoque-nsv6.onrender.com/login', requestOptions);
+        const response = await fetch('http://localhost:3000/login', requestOptions);
         const data = await response.json();
 
         if (response.ok) {
             localStorage.setItem('token', data.token);
-            localStorage.setItem('profissao', data.usuario.profissao);
+            localStorage.setItem('profissao_id', data.usuario.profissao);
 
             if (!data.usuario.ativo) {
                 alert('Conta inativa, entre em contato com o administrador');
