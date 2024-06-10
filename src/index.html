@@ -4,28 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escolha seu perfil</title>
+    <title>Login</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <script>
-        function openRenderLink(link) {
-            window.open(link, '_blank');
-        }
-    </script>
 </head>
 
 <body>
-    <div class="rectangle-index">
-        <h1>Quem é você?</h1>
-        <a href="./login-user.html"
-            onclick="openRenderLink('https://api.render.com/deploy/srv-cpfp10dds78s739hbnl0?key=2HSWFj-pXTo')">
-            <img class="colaborador-icon" src="./assets/colaborador_icone.png.png" alt="colaborador(a)">
+    <div class="rectangle-login-user">
+        <h1>Login</h1>
+        <div>
+            <form class="align-form-user-login" id="loginForm" action="/login-user" method="post">
+                <label for="username">Apelido:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                <div class="button">
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+        </div>
 
-        </a>
-        <a href="./login-adm.html"
-            onclick="openRenderLink('https://api.render.com/deploy/srv-cpfp10dds78s739hbnl0?key=2HSWFj-pXTo')">
-            <img class="admin-icon" src="./assets/admin_icone.png.png" alt="Admin">
-        </a>
+        <div id="serverMessageLogin"></div>
+
+        <div class="button-container">
+            <div class="back-button">
+                <a href="./choose-user.html">Esqueci a senha</a>
+            </div>
+            <div class="talk-adm-button">
+                <a href="./choose-user.html">Solicitar Cadastro</a>
+            </div>
+        </div>
     </div>
+    <script src="./scripts/script-login-user.js"></script>
 </body>
 
 </html>
