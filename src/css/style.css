@@ -50,23 +50,6 @@ body {
     height: 150px;
 }
 
-.rectangle-index {
-    width: 300px;
-    height: 400px;
-    background-color: var(--rectangle-color);
-    font-family: var(--main-font-family);
-    border-radius: 10px;
-    margin: 5px;
-    padding: 20px;
-    color: var(--letter-color);
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .rectangle-login-user {
     position: relative;
     position: relative;
@@ -86,7 +69,7 @@ body {
     align-items: center;
 }
 
-.rectangle-choose-user {
+.rectangle-choose-admin {
     position: relative;
     width: 680px;
     height: 800px;
@@ -96,7 +79,97 @@ body {
     color: var(--letter-color);
     text-align: center;
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 0.5;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rectangle-choose-in-charge {
+    position: relative;
+    width: 680px;
+    height: 800px;
+    background-color: var(--rectangle-color);
+    font-family: var(--main-font-family);
+    border-radius: 20px;
+    color: var(--letter-color);
+    text-align: center;
+    font-size: 18px;
+    line-height: 0.5;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rectangle-choose-manager {
+    position: relative;
+    width: 680px;
+    height: 800px;
+    background-color: var(--rectangle-color);
+    font-family: var(--main-font-family);
+    border-radius: 20px;
+    color: var(--letter-color);
+    text-align: center;
+    font-size: 18px;
+    line-height: 0.5;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rectangle-choose-seller {
+    position: relative;
+    width: 680px;
+    height: 400px;
+    background-color: var(--rectangle-color);
+    font-family: var(--main-font-family);
+    border-radius: 20px;
+    color: var(--letter-color);
+    text-align: center;
+    font-size: 18px;
+    line-height: 0.5;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rectangle-choose-stockist {
+    position: relative;
+    width: 680px;
+    height: 600px;
+    background-color: var(--rectangle-color);
+    font-family: var(--main-font-family);
+    border-radius: 20px;
+    color: var(--letter-color);
+    text-align: center;
+    font-size: 18px;
+    line-height: 0.5;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rectangle-choose-lecturer {
+    position: relative;
+    width: 680px;
+    height: 600px;
+    background-color: var(--rectangle-color);
+    font-family: var(--main-font-family);
+    border-radius: 20px;
+    color: var(--letter-color);
+    text-align: center;
+    font-size: 18px;
+    line-height: 0.5;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -195,6 +268,23 @@ body {
     align-items: center;
 }
 
+.rectangle-create-user {
+    position: relative;
+    width: 680px;
+    height: 800px;
+    background-color: var(--rectangle-color);
+    font-family: var(--main-font-family);
+    border-radius: 20px;
+    color: var(--letter-color);
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .align-textarea {
     color: #38cee2;
     align-items: center;
@@ -243,8 +333,8 @@ body {
     font-size: 18px;
     color: var(--letter-color);
     cursor: pointer;
-    padding: 20px;
-    margin-top: 20px;
+    padding: 10px;
+    margin-top: 10px;
     left: auto;
 }
 
@@ -295,6 +385,20 @@ body {
     margin-bottom: 10px;
     margin-right: 50px;
     margin-left: 50px;
+}
+
+.align-form-create-user {
+    font-family: var(--main-font-family);
+    font-size: 18px;
+    color: var(--letter-color);
+    cursor: pointer;
+    padding: 20px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    align-items: center;
 }
 
 .button {

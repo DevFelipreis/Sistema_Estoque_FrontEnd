@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+    <div class="rectangle-create-user">
+        <form class="align-form-create-user" id="cadastroForm" action="/cadastrar-usuário" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="profissao">Cargo:</label>
+            <select id="profissao_id" name="profissao" required>
+                <option value="administrador">Administrador</option>
+                <option value="encarregado">Encarregado</option>
+                <option value="gerente">Gerente</option>
+                <option value="vendedor">Vendedor</option>
+                <option value="estoquista">Estoquista</option>
+                <option value="conferente">Conferente</option>
+            </select>
+
+            <label for="status_conta">Status:</label>
+            <select id="status_conta" name="status_conta" required>
+                <option value="true">Ativo</option>
+                <option value="false">Inativo</option>
+            </select>
+
+            <div class="button">
+                <input type="submit" value="Cadastrar">
+            </div>
+        </form>
+
+        <textarea id="serverResponse" rows="22" cols="80" readonly></textarea>
+
+        <div class="button-container">
+            <div class="back-button">
+                <a href="./choose-user.html">Voltar</a>
+            </div>
+            <div class="talk-adm-button">
+                <a href="./choose-user.html">Entre em contato com o administrador</a>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/script-create-user.js"></script>
+</body>
+
+</html>
