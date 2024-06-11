@@ -8,7 +8,6 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
         formObject[key] = value;
     });
 
-    console.log("Form Data:", formObject); // Debugging statement
 
     const token = localStorage.getItem('token');
 
@@ -47,8 +46,9 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
 
         const data = await response.json();
 
-        if (data) {
-            const userText = `ID: ${data.id},\nNome: ${data.nome},\nUsername: ${data.username},\nEmail: ${data.email},\nProfissao: ${data.profissao_id},\nAtivo: ${data.status_conta}`;
+        if (data && data.usuario) {
+            const user = data.usuario;
+            const userText = `Codigo: ${user.id},\nNome: ${user.nome},\nUsername: ${user.username},\nEmail: ${user.email},\nProfissao: ${user.profissao},\nStatus_da_conta: ${user.ativo}`;
             alert('Usuário criado com sucesso!');
             document.getElementById('serverResponse').value = userText;
         }
