@@ -285,6 +285,61 @@ body {
     align-items: center;
 }
 
+.rectangle-update-user {
+    position: relative;
+    width: 680px;
+    height: 800px;
+    background-color: var(--rectangle-color);
+    font-family: var(--main-font-family);
+    border-radius: 20px;
+    color: var(--letter-color);
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.rectangle-get-user {
+    position: relative;
+    width: 680px;
+    height: 800px;
+    background-color: var(--rectangle-color);
+    font-family: var(--main-font-family);
+    border-radius: 20px;
+    color: var(--letter-color);
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rectangle-delete-user {
+    position: relative;
+    width: 680px;
+    height: 800px;
+    background-color: var(--rectangle-color);
+    font-family: var(--main-font-family);
+    border-radius: 20px;
+    color: var(--letter-color);
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .align-textarea {
     color: #38cee2;
     align-items: center;
@@ -399,6 +454,45 @@ body {
     grid-column-gap: 20px;
     grid-row-gap: 10px;
     align-items: center;
+}
+
+.align-form-update-user {
+    font-family: var(--main-font-family);
+    font-size: 18px;
+    color: var(--letter-color);
+    cursor: pointer;
+    padding: 20px;
+    margin-top: 20px;
+    left: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.align-form-get-user {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+    margin-right: 80px;
+    margin-left: 80px;
+}
+
+.align-form-delete-user {
+    font-family: var(--main-font-family);
+    font-size: 18px;
+    color: var(--letter-color);
+    cursor: pointer;
+    padding: 20px;
+    margin-top: 20px;
+    left: auto;
 }
 
 .button {

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de usuários</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body>
+    <div class="rectangle-get-user">
+        <div class="title">
+            <h1>Lista de usuarios</h1>
+        </div>
+        <h3>Deixe em branco para listar todos os usuários</h3>
+        <div class="align-form-get-user">
+            <form id="listaForm">
+                <label for="id">Código:</label>
+                <input type="text" id="id" name="id">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+                <label for="profissao_id">Cargo:</label>
+                <select id="profissao_id" name="profissao_id" required>
+                    <option value="1">Administrador</option>
+                    <option value="2">Encarregado</option>
+                    <option value="3">Gerente</option>
+                    <option value="4">Vendedor</option>
+                    <option value="5">Estoquista</option>
+                    <option value="6">Conferente</option>
+                </select>
+                <div class="button">
+                    <input type="submit" value="Listar">
+                </div>
+            </form>
+        </div>
+        <div id="serverMessage"></div>
+        <textarea id="serverResponse" rows="25" cols="80" readonly></textarea>
+        <div class="back-button">
+            <a href="./choose-user.html">Voltar</a>
+        </div>
+        <div class="talk-adm-button">
+            <a href="./choose-user.html">Entre em contato com o administrador</a>
+        </div>
+
+        <script src="./scripts/script-get-user.js"></script>
+</body>
+
+</html>
