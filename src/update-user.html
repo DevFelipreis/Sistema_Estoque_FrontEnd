@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Usuário</title>
+    <title>Atualizar Produto</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
 <body>
-    <div class="rectangle-create-user">
-        <form class="align-form-create-user" id="cadastroForm" action="/cadastrar-usuário" method="post">
+    <div class="rectangle-update-user">
+        <h4>* código não é atualizável Somente para buscar *</h4>
+        <form class="align-form-update-user" id="atualizarForm" action="/atualizar-usuario" method="put">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
 
@@ -32,21 +33,16 @@
                 <option value="5">Estoquista</option>
                 <option value="6">Conferente</option>
             </select>
-
-
-            <label for="ativo">Status:</label>
+            <label for="ativo">Status da Conta:</label>
             <select id="ativo" name="ativo" required>
                 <option value="true">Ativo</option>
                 <option value="false">Inativo</option>
             </select>
-
             <div class="button">
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="Atualizar">
             </div>
         </form>
-
-        <textarea id="serverResponse" rows="22" cols="80" readonly></textarea>
-
+        <textarea id="serverResponse" rows="18" cols="80" readonly></textarea>
         <div class="button-container">
             <div class="back-button">
                 <a href="./choose-user.html">Voltar</a>
@@ -56,7 +52,7 @@
             </div>
         </div>
     </div>
-    <script src="./scripts/script-create-user.js"></script>
+    <script src="./scripts/script-update-user.js"></script>
 </body>
 
 </html>
