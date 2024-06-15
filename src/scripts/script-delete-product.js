@@ -14,6 +14,14 @@ document.getElementById('deleteForm').addEventListener('submit', async function 
         body: JSON.stringify(Object.fromEntries(formData))
     };
 
+    localStorage.setItem('profissao_id', data.usuario.profissao);
+
+    if(data.usuario.profissao !== 'administrador') {
+        alert('Necessário realizar o login para entrar no sistema.');
+        window.location.href = './login-user.html';
+        return
+    }
+
     if (!token) {
         alert('Necessário realizar o login para entrar no sistema.');
         window.location.href = './login-user.html';

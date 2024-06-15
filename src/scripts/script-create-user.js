@@ -17,6 +17,14 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
         return;
     }
 
+    localStorage.setItem('profissao_id', data.usuario.profissao);
+
+    if(data.usuario.profissao !== 'administrador') {
+        alert('Necessário realizar o login para entrar no sistema.');
+        window.location.href = './login-user.html';
+        return
+    }
+
     const requestOptions = {
         method: 'POST',
         headers: {

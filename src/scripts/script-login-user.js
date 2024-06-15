@@ -14,7 +14,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     };
 
     try {
-        const response = await fetch('https://sistema-estoque-nsv6.onrender.com/login', requestOptions);
+        const response = await fetch('http://localhost:3000/login', requestOptions);
         const data = await response.json();
 
         if (response.ok) {
