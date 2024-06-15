@@ -20,6 +20,14 @@ document.getElementById('entradaForm').addEventListener('submit', async function
         body: JSON.stringify(formObject)
     };
 
+    localStorage.setItem('profissao_id', data.usuario.profissao);
+
+    if(data.usuario.profissao == 'vendedor' || data.usuario.profissao !== 'estoquista') {
+        alert('Necessário realizar o login para entrar no sistema.');
+        window.location.href = './login-user.html';
+        return
+    }
+
     if (!token) {
         alert('Necessário realizar o login para entrar no sistema.');
         window.location.href = './login-user.html';

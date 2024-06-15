@@ -23,14 +23,23 @@ document.getElementById('cadastroForm').addEventListener('submit', async functio
     if (!token) {
         alert('Necessário realizar o login para entrar no sistema.');
         window.location.href = './login-user.html';
-    };
+        return
+    };   
+
+    localStorage.setItem('profissao_id', data.usuario.profissao);
+
+    if(data.usuario.profissao !== 'administrador' || data.usuario.profissao !== 'gerente' || data.usuario.profissao != 'encarregado') {
+        alert('Necessário realizar o login para entrar no sistema.');
+        window.location.href = './login-user.html';
+        return
+    }
 
     try {
         const response = await fetch('https://sistema-estoque-nsv6.onrender.com/products', requestOptions);
 
         const data = await response.json();
 
-        if (response.ok) {
+               if (response.ok) {
             if (data) {
                 const product = JSON.parse(data);
                 const productText = `ID: ${product.id},\nNome: ${product.nome},\nPreço: ${product.preco},\nQuantidade: ${product.quantidade},
