@@ -180,7 +180,7 @@ body {
 .rectangle-entry-product {
     position: relative;
     width: 680px;
-    height: 800px;
+    height: 700px;
     background-color: var(--rectangle-color);
     font-family: var(--main-font-family);
     border-radius: 20px;
